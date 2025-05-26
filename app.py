@@ -8,7 +8,10 @@ load_dotenv()
 app = Flask(__name__, static_folder="static", static_url_path="/static")
 
 # Настройки подключения к БД
-conn = psycopg2.connect(os.getenv("DATABASE_URL"))
+conn = psycopg2.connect(
+    os.getenv("DATABASE_URL"),
+    options='-c search_path=app'
+)
 
 @app.route("/")
 def index():
