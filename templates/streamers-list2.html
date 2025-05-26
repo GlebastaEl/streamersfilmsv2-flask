@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Стримеры смотрят фильмы</title>
+  <link rel="stylesheet" href="../static/style.css">
+
+    <link rel="icon" type="image/png" href="/static/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/static/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/static/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/static/favicon/site.webmanifest" />
+
+</head>
+<body>
+<div class="blackBGFilter">
+  {% include "header.html" %}
+  <div class="main-container">
+    <!-- Header, GIFs, Logos, etc. остаются как есть -->
+    <div class="main-content-container">
+<!--      <div class="gifSecretContainer-Container">
+        <div class="gifSecretContainer" id="gifSecret">
+          <img class="gifSecret-image" alt="Райан Гослинг в фильме Бегущий по лезвию лежит на ступеньках" src="../static/images/gosling-sad-gosling.gif">
+          <p class="unusualRedText" id="gifSecret-close-btn" style="font-size: 24px">X</p>
+          <p><span class="arrow-left" style="font-size: 24px">< </span><span class="arrow-right"  style="font-size: 24px"> ></span></p>
+          <div class="volume-control-container">
+            <label for="volume-control" class="normalBlueText"></label>
+            <input class="neon-slider" type="range" id="volume-control" min="0" max="1" step="0.01" value="0.5">
+          </div>
+        </div>
+        <div class="gifSecretContainer" id="gifSecret2">
+          <img class="gifSecret-image" alt="Райан Гослинг в фильме Бегущий по лезвию лежит на ступеньках" src="../static/images/good-mood-gosling.gif">
+          <p class="unusualRedText" id="gifSecret-close-btn2" style="font-size: 24px">X</p>
+          <p><span class="arrow-left" style="font-size: 24px">< </span><span class="arrow-right"  style="font-size: 24px"> ></span></p>
+          <div class="volume-control-container">
+            <label for="volume-control" class="normalBlueText"></label>
+            <input class="neon-slider" type="range" id="volume-control2" min="0" max="1" step="0.01" value="0.5">
+          </div>
+        </div>
+        <div class="gifSecretContainer" id="gifSecret3">
+          <img class="gifSecret-image" alt="Райан Гослинг в фильме Бегущий по лезвию лежит на ступеньках" src="../static/images/gosling3.gif">
+          <p class="unusualRedText" id="gifSecret-close-btn3" style="font-size: 24px">X</p>
+          <p><span class="arrow-left" style="font-size: 24px">< </span><span class="arrow-right"  style="font-size: 24px"> ></span></p>
+          <div class="volume-control-container">
+            <label for="volume-control" class="normalBlueText"></label>
+            <input class="neon-slider" type="range" id="volume-control3" min="0" max="1" step="0.01" value="0.5">
+          </div>
+        </div>
+        <div class="gifSecretContainer" id="gifSecret4">
+          <img class="gifSecret-image" alt="Райан Гослинг в фильме Бегущий по лезвию лежит на ступеньках" src="../static/images/sandy-gosling.gif">
+          <p class="unusualRedText" id="gifSecret-close-btn4" style="font-size: 24px">X</p>
+          <p><span class="arrow-left" style="font-size: 24px">< </span><span class="arrow-right"  style="font-size: 24px"> ></span></p>
+          <div class="volume-control-container">
+            <label for="volume-control" class="normalBlueText"></label>
+            <input class="neon-slider" type="range" id="volume-control4" min="0" max="1" step="0.01" value="0.5">
+          </div>
+        </div>
+        <div class="gifSecretContainer" id="gifSecret5">
+          <img class="gifSecret-image" alt="Райан Гослинг в фильме Бегущий по лезвию лежит на ступеньках" src="../static/images/gosling1.gif">
+          <p class="unusualRedText" id="gifSecret-close-btn5" style="font-size: 24px">X</p>
+          <p><span class="arrow-left" style="font-size: 24px">< </span><span class="arrow-right"  style="font-size: 24px"> ></span></p>
+          <div class="volume-control-container">
+            <label for="volume-control" class="normalBlueText"></label>
+            <input class="neon-slider" type="range" id="volume-control5" min="0" max="1" step="0.01" value="0.5">
+          </div>
+        </div>
+      </div>
+      <div class="addAtmosphereContainer" id="play-btn">
+        <div class="addAtmosphere">
+          <img style="width:169px; margin-bottom:10px; margin-right:20px" src="../static/icons/headerIcons/add vibe icon.png">
+          <p class="normalRedText">добавить атмосферы</p>
+        </div>
+      </div>
+      <div class="second-line-logo-container">
+        <div class="addAtmosphere">
+          <a href="films"><img style="height:150px; margin-bottom:10px" src="../static/icons/headerIcons/watch all movies icon.png"></a>
+          <p class="normalRedText">все фильмы</p>
+        </div>
+        <div class="logo-container">
+          <img style="height:212px; margin-bottom:10px" src="../static/images/Стример смотрит лого.png">
+        </div>
+        <div class="addAtmosphere">
+          <a href="streamers-list.html"><img style="height:150px; margin-bottom:10px" src="../static/icons/headerIcons/watch all streamers icon.png"></a>
+          <p class="normalRedText">все стримеры</p>
+        </div>
+      </div>
+      <div class="third-line-header-container">
+        <div class="addAtmosphere">
+          <img style="height:150px; margin-bottom:10px" src="../static/icons/headerIcons/random film icon.png">
+          <p class="normalRedText">рандомный друг</p>
+          <p class="normalBlueText">+</p>
+          <p class="normalRedText">фильм</p>
+        </div>
+      </div>-->
+      <div class="main-content-h1">
+        <h1 style="font-size: 56px !important;">Список стримеров, которые смотрят фильмы<br> для совместного просмотра</h1>
+      </div>
+      <div class="ABCNavigation-container">
+        <!-- Кнопки A-Z -->
+        <script>
+          const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+          document.write(letters.map(l => `<a class="ABCNavigation-button" href="#${l}">${l}</a>`).join(''));
+        </script>
+      </div>
+      <a href="#" id="backToTop" title="Наверх"><img class="addAtmosphere" id="backToTopButton" src="../static/icons/back to top.png"></a>
+      <div class="ABC-list-container" id="alphabet-streamers">
+        <!-- Контейнеры по буквам будут заполняться JavaScript-ом -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<audio id="flicker-sound" src="../static/audio/neon-flicker.mp3" preload="auto"></audio>
+<audio id="BR-sound" src="../static/audio/lonely.mp3"></audio>
+<audio id="BR-sound2" src="../static/audio/Tears In The Rain.mp3"></audio>
+<audio id="BR-sound3" src="../static/audio/Elvis - falling in love.mp3"></audio>
+<audio id="BR-sound4" src="../static/audio/Joi.mp3"></audio>
+<audio id="BR-sound5" src="../static/audio/Frank_Sinatra-Summer_Wind.mp3"></audio>
+
+<script src="../static/neonBlickScript.js"></script>
+<script src="../static/BRScript.js"></script>
+<script src="../static/CommentsScript.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="../static/main.js"></script>
+<script src="../static/backToTopButton.js"></script>
+<script>
+  // Загружаем стримеров с сервера
+  fetch('/api/streamers')
+          .then(res => res.json())
+          .then(streamers => {
+            const container = document.getElementById('alphabet-streamers');
+            const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+            const grouped = {};
+            alphabet.forEach(l => grouped[l] = []);
+
+            streamers.forEach(s => {
+              const firstLetter = s.nickname_on_twitch.charAt(0).toUpperCase();
+              if (grouped[firstLetter]) {
+                grouped[firstLetter].push(s);
+              }
+            });
+
+            alphabet.forEach(letter => {
+              const list = grouped[letter];
+              const div = document.createElement('div');
+              div.className = 'alphabet-container';
+              div.innerHTML = `
+          <span class="letter" id="${letter}">${letter}</span>
+          <div class="streamers-letter-list">
+            ${list.length === 0 ? `
+              <div class="streamer-name-and-photo-container">
+                <a href="#"><img class="streamer-photo" src="../static/icons/user icon.png"></a>
+                <a class="streamer-page-link" href="#">нет стримеров</a>
+              </div>
+            ` :
+                      list.map(s => `
+              <div class="streamer-name-and-photo-container">
+                <a href="/streamer/${s.nickname_on_twitch}-smotrit"><img class="streamer-photo" src="${s.photo_path || '../static/icons/user icon.png'}"></a>
+                <a class="streamer-page-link" href="/streamer/${s.nickname_on_twitch}-smotrit">${s.nickname_on_twitch}</a>
+              </div>
+            `).join('')}
+          </div>
+        `;
+              container.appendChild(div);
+            });
+          });
+</script>
+</body>
+</html>

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Стримеры смотрят фильмы</title>
+    <link rel="stylesheet" href="../static/style.css">
+
+  <link rel="icon" type="image/png" href="/static/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/static/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/static/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/static/favicon/site.webmanifest" />
+
+</head>
+<body>
+<div class="blackBGFilter">
+  {% include "header.html" %}
+  <div class="main-container">
+<!--    <div class="gifSecretContainer-Container">
+      <div class="gifSecretContainer" id="gifSecret">
+        <img class="gifSecret-image" alt="Райан Гослинг в фильме Бегущий по лезвию лежит на ступеньках" src="../static/images/gosling-sad-gosling.gif">
+        <p class="unusualRedText" id="gifSecret-close-btn" style="font-size: 24px">X</p>
+        <p><span class="arrow-left" style="font-size: 24px">< </span><span class="arrow-right"  style="font-size: 24px"> ></span></p>
+        <div class="volume-control-container">
+          <label for="volume-control" class="normalBlueText"></label>
+          <input class="neon-slider" type="range" id="volume-control" min="0" max="1" step="0.01" value="0.5">
+        </div>
+      </div>
+      <div class="gifSecretContainer" id="gifSecret2">
+        <img class="gifSecret-image" alt="Райан Гослинг в фильме Бегущий по лезвию лежит на ступеньках" src="../static/images/good-mood-gosling.gif">
+        <p class="unusualRedText" id="gifSecret-close-btn2" style="font-size: 24px">X</p>
+        <p><span class="arrow-left" style="font-size: 24px">< </span><span class="arrow-right"  style="font-size: 24px"> ></span></p>
+        <div class="volume-control-container">
+          <label for="volume-control" class="normalBlueText"></label>
+          <input class="neon-slider" type="range" id="volume-control2" min="0" max="1" step="0.01" value="0.5">
+        </div>
+      </div>
+      <div class="gifSecretContainer" id="gifSecret3">
+        <img class="gifSecret-image" alt="Райан Гослинг в фильме Бегущий по лезвию лежит на ступеньках" src="../static/images/gosling3.gif">
+        <p class="unusualRedText" id="gifSecret-close-btn3" style="font-size: 24px">X</p>
+        <p><span class="arrow-left" style="font-size: 24px">< </span><span class="arrow-right"  style="font-size: 24px"> ></span></p>
+        <div class="volume-control-container">
+          <label for="volume-control" class="normalBlueText"></label>
+          <input class="neon-slider" type="range" id="volume-control3" min="0" max="1" step="0.01" value="0.5">
+        </div>
+      </div>
+      <div class="gifSecretContainer" id="gifSecret4">
+        <img class="gifSecret-image" alt="Райан Гослинг в фильме Бегущий по лезвию лежит на ступеньках" src="../static/images/sandy-gosling.gif">
+        <p class="unusualRedText" id="gifSecret-close-btn4" style="font-size: 24px">X</p>
+        <p><span class="arrow-left" style="font-size: 24px">< </span><span class="arrow-right"  style="font-size: 24px"> ></span></p>
+        <div class="volume-control-container">
+          <label for="volume-control" class="normalBlueText"></label>
+          <input class="neon-slider" type="range" id="volume-control4" min="0" max="1" step="0.01" value="0.5">
+        </div>
+      </div>
+      <div class="gifSecretContainer" id="gifSecret5">
+        <img class="gifSecret-image" alt="Райан Гослинг в фильме Бегущий по лезвию лежит на ступеньках" src="../static/images/gosling1.gif">
+        <p class="unusualRedText" id="gifSecret-close-btn5" style="font-size: 24px">X</p>
+        <p><span class="arrow-left" style="font-size: 24px">< </span><span class="arrow-right"  style="font-size: 24px"> ></span></p>
+        <div class="volume-control-container">
+          <label for="volume-control" class="normalBlueText"></label>
+          <input class="neon-slider" type="range" id="volume-control5" min="0" max="1" step="0.01" value="0.5">
+        </div>
+      </div>
+    </div>
+    <div class="addAtmosphereContainer" id="play-btn">
+      <div class="addAtmosphere">
+        <img style="width:169px; margin-bottom:10px; margin-right:20px" src="../static/icons/headerIcons/add vibe icon.png">
+        <p class="normalRedText">добавить атмосферы</p>
+      </div>
+    </div>
+    <div class="second-line-logo-container">
+      <div class="addAtmosphere">
+        <img style="height:150px; margin-bottom:10px" src="../static/icons/headerIcons/watch all movies icon.png">
+        <p class="normalRedText">все фильмы</p>
+      </div>
+      <div class="logo-container">
+        <img style="height:212px; margin-bottom:10px" src="../static/images/Стример смотрит лого.png">
+      </div>
+      <div class="addAtmosphere">
+        <img style="height:150px; margin-bottom:10px" src="../static/icons/headerIcons/watch all streamers icon.png">
+        <p class="normalRedText">все стримеры</p>
+      </div>
+    </div>
+    <div class="third-line-header-container">
+      <div class="addAtmosphere">
+        <img style="height:150px; margin-bottom:10px" src="../static/icons/headerIcons/random film icon.png">
+        <p class="normalRedText">рандомный друг</p>
+        <p class="normalBlueText">+</p>
+        <p class="normalRedText">фильм</p>
+      </div>
+    </div>-->
+    <div class="main-content-container">
+      <div class="main-content-h1">
+        <h1 style="font-size: 56px !important;">Список стримеров, которые смотрят фильмы<br> для совместного просмотра</h1>
+      </div>
+      <div class="ABCNavigation-container">
+        <a class="ABCNavigation-button" href="#A">A</a>
+        <a class="ABCNavigation-button" href="#B">B</a>
+        <a class="ABCNavigation-button" href="#C">C</a>
+        <a class="ABCNavigation-button" href="#D">D</a>
+        <a class="ABCNavigation-button" href="#E">E</a>
+        <a class="ABCNavigation-button" href="#F">F</a>
+        <a class="ABCNavigation-button" href="#G">G</a>
+        <a class="ABCNavigation-button" href="#H">H</a>
+        <a class="ABCNavigation-button" href="#I">I</a>
+        <a class="ABCNavigation-button" href="#J">J</a>
+        <a class="ABCNavigation-button" href="#K">K</a>
+        <a class="ABCNavigation-button" href="#L">L</a>
+        <a class="ABCNavigation-button" href="#M">M</a>
+        <a class="ABCNavigation-button" href="#N">N</a>
+        <a class="ABCNavigation-button" href="#O">O</a>
+        <a class="ABCNavigation-button" href="#P">P</a>
+        <a class="ABCNavigation-button" href="#Q">Q</a>
+        <a class="ABCNavigation-button" href="#R">R</a>
+        <a class="ABCNavigation-button" href="#S">S</a>
+        <a class="ABCNavigation-button" href="#T">T</a>
+        <a class="ABCNavigation-button" href="#U">U</a>
+        <a class="ABCNavigation-button" href="#V">V</a>
+        <a class="ABCNavigation-button" href="#W">W</a>
+        <a class="ABCNavigation-button" href="#X">X</a>
+        <a class="ABCNavigation-button" href="#Y">Y</a>
+        <a class="ABCNavigation-button" href="#Z">Z</a>
+      </div>
+      <a href="#" id="backToTop" title="Наверх"><img class="addAtmosphere" id="backToTopButton" src="../static/icons/back to top.png"></a>
+      <div class="ABC-list-container">
+        <div class="alphabet-container">
+          <span class="letter" id="A">A</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="B">B</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/icons/user icon.png"></a>
+              <a class="streamer-page-link" href="">нет стримеров</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="C">C</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="D">D</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="E">E</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="F">F</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="G">G</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="H">H</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="I">I</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="J">J</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="K">K</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="L">L</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="M">M</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="N">N</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="O">O</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="P">P</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="Q">Q</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="R">R</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="S">S</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="T">T</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="U">U</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="V">V</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="W">W</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="X">X</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="Y">Y</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>
+        </div>
+        <div class="alphabet-container">
+          <span class="letter" id="Z">Z</span>
+          <div class="streamers-letter-list">
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">zubareffofficial</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">alendilonsadasdasdasdasd</a>
+            </div>
+            <div class="streamer-name-and-photo-container">
+              <a href=""><img class="streamer-photo" src="../static/streamerphoto/Эвелон2.jpg"></a>
+              <a class="streamer-page-link" href="">Evelone192</a>
+            </div>
+          </div>        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<audio id="flicker-sound" src="../static/audio/neon-flicker.mp3" preload="auto"></audio>
+<audio id="BR-sound" src="../static/audio/lonely.mp3"></audio>
+<audio id="BR-sound2" src="../static/audio/Tears In The Rain.mp3"></audio>
+<audio id="BR-sound3" src="../static/audio/Elvis - falling in love.mp3"></audio>
+<audio id="BR-sound4" src="../static/audio/Joi.mp3"></audio>
+<audio id="BR-sound5" src="../static/audio/Frank_Sinatra-Summer_Wind.mp3"></audio>
+
+<script src="../static/neonBlickScript.js"></script>
+<script src="../static/BRScript.js"></script>
+<script src="../static/CommentsScript.js"></script>
+<!--Скрипт капчи в гугл-->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="../static/main.js"></script>
+<script src="../static/backToTopButton.js"></script>
+<script src="../static/streamersFromDataBaseAlphabet.js"></script>
+
+</body>
+</html>

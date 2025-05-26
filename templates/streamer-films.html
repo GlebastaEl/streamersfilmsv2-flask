@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Стример {{ streamer_data.popular_name }} смотрит фильмы</title>
+<link rel="stylesheet" href="../static/style.css">
+
+    <link rel="icon" type="image/png" href="/static/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/static/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/static/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/static/favicon/site.webmanifest" />
+
+    <script src="../static/backToTopButton.js"></script>
+</head>
+<body>
+<div class="blackBGFilter">
+    {% include "header.html" %}
+<div class="main-container">
+<!--<div class="gifSecretContainer-Container">
+<div class="gifSecretContainer" id="gifSecret">
+<img class="gifSecret-image" alt="Райан Гослинг в фильме Бегущий по лезвию лежит на ступеньках" src="../static/images/gosling-sad-gosling.gif">
+<p class="unusualRedText" id="gifSecret-close-btn" style="font-size: 24px">X</p>
+<p><span class="arrow-left" style="font-size: 24px">< </span><span class="arrow-right"  style="font-size: 24px"> ></span></p>
+<div class="volume-control-container">
+<label for="volume-control" class="normalBlueText"></label>
+<input class="neon-slider" type="range" id="volume-control" min="0" max="1" step="0.01" value="0.5">
+</div>
+</div>
+<div class="gifSecretContainer" id="gifSecret2">
+<img class="gifSecret-image" alt="Райан Гослинг в фильме Бегущий по лезвию лежит на ступеньках" src="../static/images/good-mood-gosling.gif">
+<p class="unusualRedText" id="gifSecret-close-btn2" style="font-size: 24px">X</p>
+<p><span class="arrow-left" style="font-size: 24px">< </span><span class="arrow-right"  style="font-size: 24px"> ></span></p>
+<div class="volume-control-container">
+<label for="volume-control" class="normalBlueText"></label>
+<input class="neon-slider" type="range" id="volume-control2" min="0" max="1" step="0.01" value="0.5">
+</div>
+</div>
+<div class="gifSecretContainer" id="gifSecret3">
+<img class="gifSecret-image" alt="Райан Гослинг в фильме Бегущий по лезвию лежит на ступеньках" src="../static/images/gosling3.gif">
+<p class="unusualRedText" id="gifSecret-close-btn3" style="font-size: 24px">X</p>
+<p><span class="arrow-left" style="font-size: 24px">< </span><span class="arrow-right"  style="font-size: 24px"> ></span></p>
+<div class="volume-control-container">
+<label for="volume-control" class="normalBlueText"></label>
+<input class="neon-slider" type="range" id="volume-control3" min="0" max="1" step="0.01" value="0.5">
+</div>
+</div>
+<div class="gifSecretContainer" id="gifSecret4">
+<img class="gifSecret-image" alt="Райан Гослинг в фильме Бегущий по лезвию лежит на ступеньках" src="../static/images/sandy-gosling.gif">
+<p class="unusualRedText" id="gifSecret-close-btn4" style="font-size: 24px">X</p>
+<p><span class="arrow-left" style="font-size: 24px">< </span><span class="arrow-right"  style="font-size: 24px"> ></span></p>
+<div class="volume-control-container">
+<label for="volume-control" class="normalBlueText"></label>
+<input class="neon-slider" type="range" id="volume-control4" min="0" max="1" step="0.01" value="0.5">
+</div>
+</div>
+<div class="gifSecretContainer" id="gifSecret5">
+<img class="gifSecret-image" alt="Райан Гослинг в фильме Бегущий по лезвию лежит на ступеньках" src="../static/images/gosling1.gif">
+<p class="unusualRedText" id="gifSecret-close-btn5" style="font-size: 24px">X</p>
+<p><span class="arrow-left" style="font-size: 24px">< </span><span class="arrow-right"  style="font-size: 24px"> ></span></p>
+<div class="volume-control-container">
+<label for="volume-control" class="normalBlueText"></label>
+<input class="neon-slider" type="range" id="volume-control5" min="0" max="1" step="0.01" value="0.5">
+</div>
+</div>
+</div>
+<div class="addAtmosphereContainer" id="play-btn">
+<div class="addAtmosphere">
+<img style="width:169px; margin-bottom:10px; margin-right:20px" src="../static/icons/headerIcons/add vibe icon.png">
+<p class="normalRedText">добавить атмосферы</p>
+</div>
+</div>
+<div class="second-line-logo-container">
+<div class="addAtmosphere">
+<a href="/films"><img style="height:150px; margin-bottom:10px" src="../static/icons/headerIcons/watch all movies icon.png"></a>
+<p class="normalRedText">все фильмы</p>
+</div>
+<div class="logo-container">
+<img style="height:212px; margin-bottom:10px" src="../static/images/Стример смотрит лого.png">
+</div>
+<a href="/"><div class="addAtmosphere">
+<img style="height:150px; margin-bottom:10px" src="../static/icons/headerIcons/watch all streamers icon.png">
+<p class="normalRedText">все стримеры</p>
+</div></a>
+</div>
+<div class="third-line-header-container">
+<div class="addAtmosphere">
+<img style="height:150px; margin-bottom:10px" src="../static/icons/headerIcons/random film icon.png">
+<p class="normalRedText">рандомный друг</p>
+<p class="normalBlueText">+</p>
+<p class="normalRedText">фильм</p>
+</div>
+</div>-->
+<div class="main-content-container">
+
+<script>
+const streamerData = {{ streamer_data | tojson }};
+const nicknameOnTwitch = {{ nickname_on_twitch | tojson }};
+console.log('nicknameOnTwitch',nicknameOnTwitch)
+console.log('streamerData',streamerData)
+</script>
+
+<h1>Стример {{ streamer_data.popular_name }} смотрит фильмы, полный список</h1>
+
+<div class="streamer-film-description">\
+<script>document.write(`<img class="streamer-photo" src="${streamerData.streamer_photo_link}" alt="{{ popular_name }}">`)</script>
+<div class="row">
+<script>document.write(`<a class="ABCNavigation-button" href="${streamerData.twitch_link}" target="_blank">Перейти на Twitch</a>`)</script>
+<script>document.write(`<a class="ABCNavigation-button" href="${streamerData.telegram_link}" target="_blank">Перейти в Telegram</a>`)</script>
+<p class="normalBlueText">
+<script>document.write(`Полное имя: ${streamerData.streamer_name }`)</script>
+</p>
+<p class="normalBlueText">
+<script>document.write(`Никнейм на Twitch: ${streamerData.nickname_on_twitch }`)</script>
+</p>
+</div>
+</div>
+
+<div class="ABCNavigation-container">
+<script>
+const rusLetters = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'.split('');
+document.write(rusLetters.map(l => `<a class="ABCNavigation-button" href="#${l}">${l}</a>`).join(''));
+</script>
+</div>
+
+    <a href="#" id="backToTop" title="Наверх"><img class="addAtmosphere" id="backToTopButton" src="../static/icons/back to top.png"></a>
+
+    <div class="ABC-list-container" id="alphabet-films">
+<!-- Заполняется JavaScript-ом -->
+</div>
+</div>
+</div>
+</div>
+
+<script>
+console.log(nicknameOnTwitch)
+fetch(`/api/streamer/${nicknameOnTwitch}-smotrit/films`)
+.then(res => res.json())
+.then(films => {
+const container = document.getElementById('alphabet-films');
+const rusLetters = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'.split('');
+const grouped = {};
+grouped['other'] = []
+rusLetters.forEach(l => grouped[l] = []);
+
+films.forEach(f => {
+const firstLetter = f.title.trim().charAt(0).toUpperCase();
+if (grouped[firstLetter]) {
+grouped[firstLetter].push(f)
+}
+else {
+    grouped['other'].push(f)
+}
+});
+
+const div = document.createElement('div');
+const listOther = grouped['other'];
+div.className = 'alphabet-container';
+div.innerHTML = `
+<span class="letter" id="other">Другое</span>
+<div class="streamers-letter-list">
+${listOther.length === 0 ? '<p class="normalBlueText">Нет фильмов</p>' :
+    listOther.map(f => {
+        return `<div class="streamer-name-and-photo-container">
+            <a href="/streamer/${nicknameOnTwitch}-smotrit/films/${f.film_id}">
+                <img class="streamer-photo" src="${f.film_banner}">
+            </a>
+            <a style="text-decoration: none" href="/streamer/${nicknameOnTwitch}-smotrit/films/${f.film_id}">
+                <p class="streamer-page-link">${f.title}</p>
+            </a>
+         </div>`;
+    }).join('')}
+</div>
+`;
+container.appendChild(div);
+
+rusLetters.forEach(letter => {
+const list = grouped[letter];
+if (list.length > 0) console.log('list', list)
+const div = document.createElement('div');
+div.className = 'alphabet-container';
+div.innerHTML = `
+<span class="letter" id="${letter}">${letter}</span>
+<div class="streamers-letter-list">
+${list.length === 0 ? '<p class="normalBlueText">Нет фильмов</p>' :
+    list.map(f => {
+        return `<div class="streamer-name-and-photo-container">
+            <a href="/streamer/${nicknameOnTwitch}-smotrit/films/${f.film_id}">
+                <img class="streamer-photo" src="${f.film_banner}">
+            </a>
+            <a style="text-decoration: none" href="/streamer/${nicknameOnTwitch}-smotrit/films/${f.film_id}">
+                <p class="streamer-page-link">${f.title}</p>
+            </a>
+         </div>`;
+    }).join('')}
+</div>
+`;
+container.appendChild(div);
+});
+})
+</script>
+
+</body>
+</html>

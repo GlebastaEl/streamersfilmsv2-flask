@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Стример смотрит</title>
+  <link rel="stylesheet" href="/static/style.css">
+
+  <link rel="icon" type="image/png" href="/static/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/static/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/static/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/static/favicon/site.webmanifest" />
+
+</head>
+<body>
+
+<script>
+  const filmId = {{ film_id | tojson }};
+  const nicknameOnTwitch = {{ nickname_on_twitch | tojson }};
+  console.log('nicknameOnTwitch',nicknameOnTwitch);
+  console.log('filmId',filmId);
+  const url = new URL(window.location);
+  url.searchParams.set('film_id', filmId);
+  url.searchParams.set('nickname_on_twitch', nicknameOnTwitch);
+  window.history.pushState({}, '', url); // изменяет URL без перезагрузки
+</script>
+
+<div class="blackBGFilter">
+  {% include "header.html" %}
+  <div class="main-container">
+    </div>
+    <div class="main-content-container">
+      <div class="main-content-h1">
+        <h1>Стример <span id="streamer-in-header" class="h1">Зубарев</span> смотрит фильм <span class="h1" id="film-in-header">1+1 (</span><span class="h1" id="film-year-in-header">2011</span>)</h1>
+      </div>
+      <div class="streamer-plus-film-container">
+        <div class="streamer-film-description">
+          <div class="streamer-film-container">
+            <img class="streamer-image"src="/static/streamerphoto/Зубарев и пельмени.jpg">
+            <p id="plus-symbol">+</p>
+            <img class="film-poster-image" src="/static/images/films-photo/1+1 фильм постер.webp">
+          </div>
+          <div class="film-description-container">
+            <p class="normalRedText" style="margin-bottom: 20px; filter: drop-shadow(0 0 20px #ff4500);"> Ник стримера на twitch: <span class="normalBlueText" id="streamer-twitch nickname">zubarefff</span></p>
+            <p class="normalRedText" style="margin-bottom: 20px; filter: drop-shadow(0 0 20px #ff4500);">Год производства: <span class="normalBlueText" id="film-year">2011</span></p>
+            <p class="normalRedText" style="margin-bottom: 20px; filter: drop-shadow(0 0 20px #ff4500);">Жанр: <span class="normalBlueText" id="film-genres">драма, комедия</span></p>
+            <p class="normalRedText" style="margin-bottom: 20px; filter: drop-shadow(0 0 20px #ff4500);">Кинопоиск: <span class="normalBlueText" id="kinopoisk-mark">8,9</span> IMDb: <span class="normalBlueText" id="imdb-mark">8,5</span></p>
+            <p class="normalRedText">Описание: <span class="normalBlueText" id="film-description"> в результате несчастного случая, богатый аристократ Филипп нанимает в помощники человека, который менее всего подходит для этой работы, – молодого жителя предместья Дрисса, только что освободившегося из тюрьмы. Несмотря на то, что Филипп прикован к инвалидному креслу, Дриссу удается привнести в размеренную жизнь аристократа дух приключений.</span></p>
+            <a id="streamers-channel-link" href="https://www.twitch.tv/zubarefff" target="_blank"><img class="addAtmosphere" style="width:150px; margin-top: 20px"  src="/static/icons/twitch button.png"></a>
+          </div>
+        </div>
+      </div>
+      <div class="film-video-container">
+        <iframe style="filter: drop-shadow(0 0 7px #0dd3cc); border-radius: 20px;" src="https://vkvideo.ru/video_ext.php?oid=-218668913&id=456240817&hd=4" width="1280" height="720" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="comments-main-container">
+      <div class="comments-container">
+        <div class="users-all-comments-container">
+          <p class="normalRedText" style="font-size: 24px;">Отзывы и комментарии</p>
+          <div class="fullComment" style="width: 100%">
+            <img id="user-anonymous-icon" style="height:100px; margin-bottom:10px" src="/static/icons/user icon.png">
+            <div class="comment-content">
+              <div class="comment-header">
+                <span class="user-name">Joe (Officer Key)</span>
+                <span class="comment-date">19.02.2049</span>
+              </div>
+              <div class="comment-text-footer">
+                <p class="normalBlueText">Важны лишь две идеи - вера и любовь, соединение которых является ключом к самой жизни. Именно они и отличают человека от репликанта и дают репликанту возможность стать человеком.</p>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+        <div class="add-comments-container">
+          <p class="normalRedText" style="font-size: 24px; filter: drop-shadow(0 0 20px #ff4500);">Оставить комментарий</p>
+          <div class="row">
+            <label class="normalBlueText" for="user-name">Ваше уважаемое имя:</label>
+            <input type="text" class="comments-name-input" name="username" id="user-name" maxlength="50" required>
+          </div>
+          <div class="row">
+            <label class="normalBlueText" for="user-comment">Ваш уважаемый комментарий:</label>
+            <textarea class="comments-text-input" name="comment" id="user-comment" maxlength="1000" required></textarea>
+          </div>
+          <div class="g-recaptcha" data-sitekey="6Lf6uEIrAAAAAOWlmkO9KfhE_GluE02cgrYcwcgp"></div>
+          <img id="sendComment" class="addAtmosphere" style="width:150px; margin-bottom: 30px;" src="/static/icons/send comment icon.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

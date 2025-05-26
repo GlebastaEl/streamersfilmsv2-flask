@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Все фильмы со стримерами</title>
+  <link rel="stylesheet" href="../static/style.css">
+
+  <link rel="icon" type="image/png" href="/static/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/static/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/static/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/static/favicon/site.webmanifest" />
+
+</head>
+<body>
+<div class="blackBGFilter">
+  <div class="main-container">
+    {% include "header.html" %}
+
+    <h1>Все фильмы, просмотренные стримерами</h1>
+
+    <div class="ABCNavigation-container">
+      <script>
+        const rusLetters = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'.split('');
+        document.write(rusLetters.map(l => `<a class="ABCNavigation-button" href="#${l}">${l}</a>`).join(''));
+      </script>
+    </div>
+
+    <div class="ABC-list-container" id="alphabet-films"></div>
+  </div>
+</div>
+
+<script>
+  fetch('/api/films/all')
+          .then(res => res.json())
+          .then(films => {
+            const container = document.getElementById('alphabet-films');
+            const rusLetters = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'.split('');
+            const grouped = {};
+            grouped['other'] = [];
+            rusLetters.forEach(l => grouped[l] = []);
+
+            films.forEach(f => {
+              const firstLetter = f.title.trim().charAt(0).toUpperCase();
+              if (grouped[firstLetter]) {
+                grouped[firstLetter].push(f);
+              } else {
+                grouped['other'].push(f);
+              }
+            });
+
+            if (grouped['other'].length > 0) {
+              const div = document.createElement('div');
+              div.className = 'alphabet-container';
+              div.innerHTML = `
+        <span class="letter" id="other">Другое</span>
+        <div class="streamers-letter-list">
+          ${grouped['other'].map(f => `
+            <div class="streamer-name-and-photo-container">
+              <a href="/films/${f.film_id}"><img class="streamer-photo" src="${f.film_banner}"></a>
+              <a href="/films/${f.film_id}" class="streamer-page-link">${f.title}</a>
+            </div>`).join('')}
+        </div>
+      `;
+              container.appendChild(div);
+            }
+
+            rusLetters.forEach(letter => {
+              const list = grouped[letter];
+              const div = document.createElement('div');
+              div.className = 'alphabet-container';
+              div.innerHTML = `
+        <span class="letter" id="${letter}">${letter}</span>
+        <div class="streamers-letter-list">
+          ${list.length === 0 ? '<p class="normalBlueText">Нет фильмов</p>' :
+                      list.map(f => `
+              <div class="streamer-name-and-photo-container">
+                <a href="/films/${f.film_id}"><img class="streamer-photo" src="${f.film_banner}"></a>
+                <a href="/films/${f.film_id}" class="streamer-page-link">${f.title}</a>
+              </div>`).join('')}
+        </div>
+      `;
+              container.appendChild(div);
+            });
+          });
+</script>
+</body>
+</html>

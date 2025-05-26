@@ -1,0 +1,147 @@
+@font-face {
+    font-family: 'TinkoffSans';
+    src: url('fonts/TinkoffSans-Regular.ttf') format('ttf');
+}
+
+*, *::before, *::after {
+    font-family: 'TinkoffSans', sans-serif;
+    box-sizing: border-box; /*Это мастхэв штука, которая делает так, что все padding и margin автоматически сужают сам контент и див не увеличивается ( по умолчанию увеличивается)*/
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'TinkoffSans', sans-serif;
+    background-color: #141414;
+    background-image: url("images/lonely.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;                 /* высота блока */
+}
+
+.header {
+    position: relative;
+
+    height: 125px;
+    width: 80%;
+    max-width: 1280px;
+    min-width: 1024px;
+
+    margin: 0 auto 5px;
+
+    background: rgba(0, 0, 0, 0.85); /* полупрозрачный фон */
+    border-radius: 16px;
+    color: white;
+    backdrop-filter: blur(10px); /* эффект размытия фона */
+    -webkit-backdrop-filter: blur(10px); /* для Safari */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    border: 3px solid #4f57d9;
+}
+
+.logoContainer{
+    height: 100%;
+    width: 25%;
+    margin: auto auto;
+}
+
+.logoImage {
+    height: 100px;
+    margin-top: 12px;
+}
+
+.mainContainer {
+    width: 80%;
+    max-width: 1280px;
+    min-width: 1024px;
+    margin: 0 auto;
+
+    background: rgba(0, 0, 0, 0.85); /* полупрозрачный фон */
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    backdrop-filter: blur(10px); /* эффект размытия фона */
+    -webkit-backdrop-filter: blur(10px); /* для Safari */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    border: 3px solid #4f57d9;
+}
+
+.addAtmosphere {
+    display: flex;
+    position: relative;
+    width: 80%;
+    max-width: 1280px;
+    min-width: 1024px;
+    height: 50px;
+    margin: 0 auto 5px;
+
+
+    background: rgba(0, 0, 0, 0.7); /* полупрозрачный фон */
+    border-radius: 16px;
+    color: white;
+    backdrop-filter: blur(10px); /* эффект размытия фона */
+    -webkit-backdrop-filter: blur(10px); /* для Safari */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    align-items: center;
+    justify-content: center;
+
+    transition: .1s ease-out;
+
+    border: 3px solid #4f57d9;
+}
+
+.addAtmosphere:hover {
+    background: rgba(0, 0, 0, 0.5); /* полупрозрачный фон */
+    border-radius: 16px;
+    color: white;
+    backdrop-filter: blur(10px); /* эффект размытия фона */
+}
+
+.addAtmosphereTextContainer {
+    display: flex;
+    align-items: center;
+    margin-right: 50px
+}
+
+.gifSecretContainer {
+    display: none;
+    width: 100%;
+    margin: 0 0 5px 0;
+    justify-content: center;
+}
+
+.streamerPlusFilmPhotoContainer {
+    display: flex;
+    gap: 20px;
+    width: 607px;
+}
+
+.streamerPlusFilmMainInfoContainer{
+    width: 100%;
+    display: flex;
+}
+
+.streamerPhotoBox, .FilmPhotoBox {
+    overflow: hidden;
+    width: 295px;
+    height: auto;
+    border-radius: 20px;
+    border: 3px solid #4f57d9;
+    cursor: pointer;
+
+}
+
+.streamerImage, .FilmPhotoBox {
+
+    width: 295px;
+    height: 100%;
+    object-fit: cover;
+}
