@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const filmId = urlParams.get('film_id');
     const nickname_on_twitch = urlParams.get('nickname_on_twitch');
 
-    let url = "http://127.0.0.1:5000/api/streamed_films?";
+    let url = "/api/streamed_films?";
     if (filmId) url += `film_id=${filmId}&`;
     if (nickname_on_twitch) url += `nickname_on_twitch=${nickname_on_twitch}`;
 
