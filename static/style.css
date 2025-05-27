@@ -471,7 +471,7 @@ h1 {
 
     .second-line-logo-container,
     .third-line-header-container {
-        flex-direction: column;
+/*        flex-direction: column;*/
         text-align: center;
     }
 
