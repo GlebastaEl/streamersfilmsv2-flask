@@ -50,7 +50,7 @@ noStreamerDiv.className = "streamer-name-and-photo-container";
 
 const img = document.createElement("img");
 img.className = "streamer-photo";
-img.src = "../static/icons/user icon.png";
+img.src = "/static/icons/user icon.png";
 
 const text = document.createElement("a");
 text.className = "streamer-page-link";

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Стримеры смотрят фильмы</title>
-  <link rel="stylesheet" href="../static/style.css">
+  <link rel="stylesheet" href="/static/style.css">
 
     <link rel="icon" type="image/png" href="/static/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/static/favicon/favicon.svg" />
@@ -102,7 +102,7 @@
           document.write(letters.map(l => `<a class="ABCNavigation-button" href="#${l}">${l}</a>`).join(''));
         </script>
       </div>
-      <a href="#" id="backToTop" title="Наверх"><img class="addAtmosphere" id="backToTopButton" src="../static/icons/back to top.png"></a>
+      <a href="#" id="backToTop" title="Наверх"><img class="addAtmosphere" id="backToTopButton" src="/static/icons/back to top.png"></a>
       <div class="ABC-list-container" id="alphabet-streamers">
         <!-- Контейнеры по буквам будут заполняться JavaScript-ом -->
       </div>
@@ -110,12 +110,12 @@
   </div>
 </div>
 
-<audio id="flicker-sound" src="../static/audio/neon-flicker.mp3" preload="auto"></audio>
-<audio id="BR-sound" src="../static/audio/lonely.mp3"></audio>
-<audio id="BR-sound2" src="../static/audio/Tears In The Rain.mp3"></audio>
-<audio id="BR-sound3" src="../static/audio/Elvis - falling in love.mp3"></audio>
-<audio id="BR-sound4" src="../static/audio/Joi.mp3"></audio>
-<audio id="BR-sound5" src="../static/audio/Frank_Sinatra-Summer_Wind.mp3"></audio>
+<audio id="flicker-sound" src="/static/audio/neon-flicker.mp3" preload="auto"></audio>
+<audio id="BR-sound" src="/static/audio/lonely.mp3"></audio>
+<audio id="BR-sound2" src="/static/audio/Tears In The Rain.mp3"></audio>
+<audio id="BR-sound3" src="/static/audio/Elvis - falling in love.mp3"></audio>
+<audio id="BR-sound4" src="/static/audio/Joi.mp3"></audio>
+<audio id="BR-sound5" src="/static/audio/Frank_Sinatra-Summer_Wind.mp3"></audio>
 
 <!--<script>
   // Загружаем стримеров с сервера
@@ -163,11 +163,13 @@
 <script src="/static/neonBlickScript.js"></script>
 <script src="/static/BRScript.js"></script>
 <script src="/static/CommentsScript.js"></script>
-<!--Скрипт капчи в гугл-->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <script src="/static/main.js"></script>
 <script src="/static/random-film.js"></script>
 <script src="/static/backToTopButton.js"></script>
 <script src="/static/streamersFromDataBaseAlphabet.js"></script>
+
+<!--Скрипт капчи в гугл-->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
