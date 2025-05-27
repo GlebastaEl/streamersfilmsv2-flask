@@ -20,7 +20,7 @@ def index():
 @app.route("/api/streamed_films", methods=["GET"])
 def get_streamed_films():
     film_id = request.args.get("film_id", type=int)
-    nickname_on_twitch = request.args.get("nickname_on_twitch", type=int)
+    nickname_on_twitch = request.args.get("nickname_on_twitch")
 
     query = """
         SELECT
