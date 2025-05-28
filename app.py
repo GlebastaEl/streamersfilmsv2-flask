@@ -79,7 +79,7 @@ def get_streamed_films():
 @app.route("/api/streamers")
 def api_streamers():
     cur = conn.cursor()
-    cur.execute("SELECT id, streamer_name, twitch_link, streamer_photo_link FROM app.streamers ORDER BY streamer_name ASC")
+    cur.execute("SELECT id, streamer_name, nickname_on_twitch, twitch_link, streamer_photo_link FROM app.streamers ORDER BY streamer_name ASC")
     streamers = cur.fetchall()
     cur.close()
 
@@ -88,8 +88,9 @@ def api_streamers():
         result.append({
             "id": s[0],
             "streamer_name": s[1],
-            "twitch_link": s[2],
-            "streamer_photo_link": s[3]
+            "nickname_on_twitch": s[2],
+            "twitch_link": s[3],
+            "streamer_photo_link": s[4]
         })
 
     return jsonify(result)
