@@ -67,19 +67,20 @@
 
             rusLetters.forEach(letter => {
               const list = grouped[letter];
+              if (list.length === 0) return; // пропускаем пустые буквы
+
               const div = document.createElement('div');
               div.className = 'alphabet-container';
               div.innerHTML = `
-        <span class="letter" id="${letter}">${letter}</span>
-        <div class="streamers-letter-list">
-          ${list.length === 0 ? '<p class="normalBlueText">Нет фильмов</p>' :
-                      list.map(f => `
-              <div class="streamer-name-and-photo-container">
-                <a href="/films/${f.film_id}"><img class="streamer-photo" src="${f.film_banner}"></a>
-                <a href="/films/${f.film_id}" class="streamer-page-link">${f.title}</a>
-              </div>`).join('')}
-        </div>
-      `;
+    <span class="letter" id="${letter}">${letter}</span>
+    <div class="streamers-letter-list">
+      ${list.map(f => `
+        <div class="streamer-name-and-photo-container">
+          <a href="/films/${f.film_id}"><img class="streamer-photo" src="${f.film_banner}"></a>
+          <a href="/films/${f.film_id}" class="streamer-page-link">${f.title}</a>
+        </div>`).join('')}
+    </div>
+  `;
               container.appendChild(div);
             });
           });
@@ -89,7 +90,7 @@
 <script src="{{ url_for('static', filename='BRScript.js') }}"></script>
 <!--<script src="{{ url_for('static', filename='CommentsScript.js') }}"></script>-->
 <!--Скрипт капчи в гугл-->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<!--<script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
 <script src="/static/main.js"></script>
 <script src="{{ url_for('static', filename='random-film.js') }}"></script>
 <script src="{{ url_for('static', filename='backToTopButton.js') }}"></script>

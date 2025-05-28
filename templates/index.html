@@ -2,8 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Стример смотрит</title>
+  <title>Стример {{ popular_name }} смотрит фильм {{ film_title }} ({{ film_year }} смотреть онлайн в хорошем качестве полную версию</title>
+  <meta name="description" content="Стример {{ nickname_on_twitch }} смотрит полную версию фильма '{{ film_title }}' ({{ film_year }}). Запись стрима в хорошем качестве бесплатно без регистрации.">
+  <meta property="og:title" content="Стример {{ popular_name }} смотрит {{ film_title }}">
+  <meta property="og:description" content="Стример {{ nickname_on_twitch }} смотрит полную версию фильма '{{ film_title }}' ({{ film_year }}). Запись стрима в хорошем качестве бесплатно без регистрации.">
+  <meta property="og:type" content="video.other">
+  <meta property="og:image" content="{{ film_banner_url }}">
+
+  <!--Текущий URL страницы, чтобы соцсеть знала, куда вести пользователя.-->
+  <meta property="og:url" content="{{ request.url }}">
+
+
   <link rel="stylesheet" href="/static/style.css">
+
+
 
   <link rel="icon" type="image/png" href="/static/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/static/favicon/favicon.svg" />
@@ -41,11 +53,11 @@
             <img class="film-poster-image" src="">
           </div>
           <div class="film-description-container">
-            <p class="normalRedText" style="margin-bottom: 20px; filter: drop-shadow(0 0 20px #ff4500);"> Ник стримера на twitch: <span class="normalBlueText" id="streamer-twitch nickname">zubarefff</span></p>
-            <p class="normalRedText" style="margin-bottom: 20px; filter: drop-shadow(0 0 20px #ff4500);">Год производства: <span class="normalBlueText" id="film-year">2011</span></p>
-            <p class="normalRedText" style="margin-bottom: 20px; filter: drop-shadow(0 0 20px #ff4500);">Жанр: <span class="normalBlueText" id="film-genres">драма, комедия</span></p>
-            <p class="normalRedText" style="margin-bottom: 20px; filter: drop-shadow(0 0 20px #ff4500);">Кинопоиск: <span class="normalBlueText" id="kinopoisk-mark">8,9</span> IMDb: <span class="normalBlueText" id="imdb-mark">8,5</span></p>
-            <p class="normalRedText">Описание: <span class="normalBlueText" id="film-description"> в результате несчастного случая, богатый аристократ Филипп нанимает в помощники человека, который менее всего подходит для этой работы, – молодого жителя предместья Дрисса, только что освободившегося из тюрьмы. Несмотря на то, что Филипп прикован к инвалидному креслу, Дриссу удается привнести в размеренную жизнь аристократа дух приключений.</span></p>
+            <p class="normalRedText" style="margin-bottom: 20px; filter: drop-shadow(0 0 20px #ff4500);"> Ник стримера на twitch: <span class="normalBlueText" id="streamer-twitch nickname"></span></p>
+            <p class="normalRedText" style="margin-bottom: 20px; filter: drop-shadow(0 0 20px #ff4500);">Год производства: <span class="normalBlueText" id="film-year"></span></p>
+            <p class="normalRedText" style="margin-bottom: 20px; filter: drop-shadow(0 0 20px #ff4500);">Жанр: <span class="normalBlueText" id="film-genres"></span></p>
+            <p class="normalRedText" style="margin-bottom: 20px; filter: drop-shadow(0 0 20px #ff4500);">Кинопоиск: <span class="normalBlueText" id="kinopoisk-mark"></span> IMDb: <span class="normalBlueText" id="imdb-mark"></span></p>
+            <p class="normalRedText">Описание: <span class="normalBlueText" id="film-description"></span></p>
             <a id="streamers-channel-link" href="https://www.twitch.tv/zubarefff" target="_blank"><img class="addAtmosphere" style="width:150px; margin-top: 20px"  src="/static/icons/twitch button.png"></a>
           </div>
         </div>
