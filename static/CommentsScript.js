@@ -18,7 +18,7 @@ const formattedTime = now.toLocaleTimeString('ru-RU', { hour: '2-digit', minute:
 // Создаём HTML нового комментария
 const newCommentHTML = `
   <div class="fullComment" style="width: 100%">
-    <img id="user-anonymous-icon" style="height:100px; margin-bottom:10px" src="../static/icons/user%20icon.png">
+    <img id="user-anonymous-icon" style="height:100px; margin-bottom:10px" src="/static/icons/user%20icon.png">
     <div class="comment-content">
       <div class="comment-header">
         <span class="user-name">${name}</span>
