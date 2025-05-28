@@ -103,7 +103,14 @@ def streamer_film_page(nickname_on_twitch, film_id):
 def streamer_film_page(nickname_on_twitch, film_id):
     cur = conn.cursor()
     cur.execute("""
-        SELECT st.video_url
+        SELECT
+            st.video_url,
+            s.streamer_name,
+            s.popular_name,
+            s.nickname_on_twitch,
+            f.title,
+            f.year,
+            f.film_banner
         FROM streamers_plus_films_connections st
         JOIN streamers s ON s.id = st.streamer_id
         JOIN films f ON f.id = st.film_id
@@ -112,14 +119,25 @@ def streamer_film_page(nickname_on_twitch, film_id):
     result = cur.fetchone()
     cur.close()
 
-    video_url = result[0] if result else ""
+    if result:
+        video_url, streamer_name, popular_name, nickname_on_twitch, film_title, film_year, film_banner_url = result
+    else:
+        video_url = ""
+        streamer_name = popular_name = film_title = film_banner_url = "Не найдено"
+        film_year = 0
 
     return render_template(
         "index.html",
         nickname_on_twitch=nickname_on_twitch,
         film_id=film_id,
-        video_url=video_url
+        video_url=video_url,
+        streamer_name=streamer_name,
+        popular_name=popular_name,
+        film_title=film_title,
+        film_year=film_year,
+        film_banner_url=film_banner_url
     )
+
 
 @app.route("/streamer/<nickname_on_twitch>-smotrit")
 def streamer_page(nickname_on_twitch):
