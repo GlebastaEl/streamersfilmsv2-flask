@@ -77,31 +77,22 @@ def get_streamed_films():
     return jsonify(results)
 
 @app.route("/api/streamers")
-def get_streamers():
+def api_streamers():
     cur = conn.cursor()
-    cur.execute("""
-        SELECT id, nickname_on_twitch, streamer_photo_link
-        FROM streamers
-        ORDER BY LOWER(nickname_on_twitch)
-    """)
-    rows = cur.fetchall()
+    cur.execute("SELECT id, streamer_name, twitch_link, streamer_photo_link FROM app.streamers ORDER BY streamer_name ASC")
+    streamers = cur.fetchall()
     cur.close()
 
-    grouped = {}
-
-    for id, nickname, photo_link in rows:
-        if not nickname:
-            continue
-        first_letter = nickname[0].upper()
-        if first_letter not in grouped:
-            grouped[first_letter] = []
-        grouped[first_letter].append({
-            "id": id,
-            "nickname": nickname,
-            "photo": photo_link or "/static/icons/user icon.png"
+    result = []
+    for s in streamers:
+        result.append({
+            "id": s[0],
+            "streamer_name": s[1],
+            "twitch_link": s[2],
+            "streamer_photo_link": s[3]
         })
 
-    return jsonify(grouped)
+    return jsonify(result)
 
 """ @app.route("/streamer/<nickname_on_twitch>-smotrit/films/<int:film_id>")
 def streamer_film_page(nickname_on_twitch, film_id):
