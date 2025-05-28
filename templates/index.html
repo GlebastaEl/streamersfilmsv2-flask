@@ -89,12 +89,14 @@
   </div>
 </div>
 
-<script src="/static/neonBlickScript.js"></script>
-<script src="/static/BRScript.js"></script>
-<script src="/static/CommentsScript.js"></script>
+<script src="{{ url_for('static', filename='neonBlickScript.js') }}"></script>
+<script src="{{ url_for('static', filename='BRScript.js') }}"></script>
+<script src="{{ url_for('static', filename='CommentsScript.js') }}"></script>
 <!--Скрипт капчи в гугл-->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="/static/main.js"></script>
-<script src="/static/random-film.js"></script>
+<script src="{{ url_for('static', filename='random-film.js') }}"></script>
+<script src="{{ url_for('static', filename='backToTopButton.js') }}"></script>
+<script src="{{ url_for('static', filename='streamersFromDataBaseAlphabet.js') }}"></script>
 </body>
 </html>
