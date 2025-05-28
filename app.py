@@ -87,15 +87,21 @@ def get_streamers():
     rows = cur.fetchall()
     cur.close()
 
-    result = []
-    for row in rows:
-        result.append({
-            "id": row[0],
-            "nickname_on_twitch": row[1],
-            "photo_path": row[2] if row[2] else None
+    grouped = {}
+
+    for id, nickname, photo_link in rows:
+        if not nickname:
+            continue
+        first_letter = nickname[0].upper()
+        if first_letter not in grouped:
+            grouped[first_letter] = []
+        grouped[first_letter].append({
+            "id": id,
+            "nickname": nickname,
+            "photo": photo_link or "/static/icons/user icon.png"
         })
 
-    return jsonify(result)
+    return jsonify(grouped)
 
 """ @app.route("/streamer/<nickname_on_twitch>-smotrit/films/<int:film_id>")
 def streamer_film_page(nickname_on_twitch, film_id):
