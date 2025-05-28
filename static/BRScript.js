@@ -35,19 +35,19 @@ volumeSlider.addEventListener('input', () => {
 });
 
 const images = [
-    '../static/images/gosling-sad-gosling.gif',
-    '../static/images/good-mood-gosling.gif',
-    '../static/images/gosling3.gif',
-    '../static/images/sandy-gosling.gif',
-    '../static/images/gosling1.gif'
+    '/static/images/gosling-sad-gosling.gif',
+    '/static/images/good-mood-gosling.gif',
+    '/static/images/gosling3.gif',
+    '/static/images/sandy-gosling.gif',
+    '/static/images/gosling1.gif'
 ];
 
 const audios = [
-    '../static/audio/lonely.mp3',
-    '../static/audio/Tears In The Rain.mp3',
-    '../static/audio/Elvis - falling in love.mp3',
-    '../static/audio/Joi.mp3',
-    '../static/audio/Frank_Sinatra-Summer_Wind.mp3'
+    '/static/audio/lonely.mp3',
+    '/static/audio/Tears In The Rain.mp3',
+    '/static/audio/Elvis - falling in love.mp3',
+    '/static/audio/Joi.mp3',
+    '/static/audio/Frank_Sinatra-Summer_Wind.mp3'
 ];
 
 let currentIndex = 0;
