@@ -149,7 +149,7 @@
             ` :
                       list.map(s => `
               <div class="streamer-name-and-photo-container">
-                <a href="/streamer/${s.nickname_on_twitch}-smotrit"><img class="streamer-photo" src="${s.photo_path || '../static/icons/user icon.png'}"></a>
+                <a href="/streamer/${s.nickname_on_twitch}-smotrit"><img class="streamer-photo" src="${s.streamer_photo_link || '../static/icons/user icon.png'}"></a>
                 <a class="streamer-page-link" href="/streamer/${s.nickname_on_twitch}-smotrit">${s.nickname_on_twitch}</a>
               </div>
             `).join('')}
