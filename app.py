@@ -1,5 +1,7 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, Response, url_for
 import psycopg2
+
+from datetime import datetime
 
 import os
 from dotenv import load_dotenv
@@ -296,48 +298,54 @@ def get_random_pairs():
 
     return jsonify(result)
 
-    @app.route('/sitemap.xml')
-    def sitemap():
-        pages = []
 
-        # Текущая дата
-        today = datetime.now().date().isoformat()
+@app.route('/sitemap.xml')
+def sitemap():
+    pages = []
 
-        # Главная страница
-        pages.append({
-            "loc": url_for("index", _external=True),
-            "lastmod": today
-        })
+    today = datetime.now().date().isoformat()
 
-        # Все стримеры
-        cur = conn.cursor()
-        cur.execute("SELECT nickname_on_twitch FROM streamers")
-        streamers = cur.fetchall()
-        for s in streamers:
-            url = url_for("streamer_page", nickname_on_twitch=s[0], _external=True)
-            pages.append({"loc": url, "lastmod": today})
+    # Главная страница
+    pages.append({
+        "loc": url_for("index", _external=True),
+        "lastmod": today
+    })
 
-        # Все пары стример + фильм
-        cur.execute("SELECT s.nickname_on_twitch, f.id FROM streamers_plus_films_connections st JOIN streamers s ON s.id = st.streamer_id JOIN films f ON f.id = st.film_id")
-        pairs = cur.fetchall()
-        for nickname_on_twitch, film_id in pairs:
-            url = url_for("streamer_film_page", nickname_on_twitch=nickname_on_twitch, film_id=film_id, _external=True)
-            pages.append({"loc": url, "lastmod": today})
-        cur.close()
+    # Все стримеры
+    cur = conn.cursor()
+    cur.execute("SELECT nickname_on_twitch FROM streamers")
+    streamers = cur.fetchall()
+    for s in streamers:
+        url = url_for("streamer_page", nickname_on_twitch=s[0], _external=True)
+        pages.append({"loc": url, "lastmod": today})
 
-        # Генерация XML
-        xml = ['<?xml version="1.0" encoding="UTF-8"?>']
-        xml.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
-        for page in pages:
-            xml.append("<url>")
-            xml.append(f"<loc>{page['loc']}</loc>")
-            xml.append(f"<lastmod>{page['lastmod']}</lastmod>")
-            xml.append("<changefreq>weekly</changefreq>")
-            xml.append("<priority>0.8</priority>")
-            xml.append("</url>")
-        xml.append("</urlset>")
+    # Все пары стример + фильм
+    cur.execute("""
+        SELECT s.nickname_on_twitch, f.id
+        FROM streamers_plus_films_connections st
+        JOIN streamers s ON s.id = st.streamer_id
+        JOIN films f ON f.id = st.film_id
+    """)
+    pairs = cur.fetchall()
+    cur.close()
 
-        return Response("\n".join(xml), mimetype="application/xml")
+    for nickname_on_twitch, film_id in pairs:
+        url = url_for("streamer_film_page", nickname_on_twitch=nickname_on_twitch, film_id=film_id, _external=True)
+        pages.append({"loc": url, "lastmod": today})
+
+    xml = ['<?xml version="1.0" encoding="UTF-8"?>']
+    xml.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+    for page in pages:
+        xml.append("<url>")
+        xml.append(f"<loc>{page['loc']}</loc>")
+        xml.append(f"<lastmod>{page['lastmod']}</lastmod>")
+        xml.append("<changefreq>weekly</changefreq>")
+        xml.append("<priority>0.8</priority>")
+        xml.append("</url>")
+    xml.append("</urlset>")
+
+    return Response("\n".join(xml), mimetype="application/xml")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
